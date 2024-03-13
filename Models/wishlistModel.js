@@ -1,10 +1,10 @@
-const mongoose= require('mongoose')
+const mongoose = require('mongoose')
 
-const productSchema=  new mongoose.Schema({
+const wishListSchema= new mongoose.Schema({
     id:{
         type:Number,
-        required:true,
-        unique:true
+        required:true
+        
     },
     title:{
         type:String,
@@ -16,7 +16,6 @@ const productSchema=  new mongoose.Schema({
         required:true,
 
     },
-    
     category:{
         type:String,
         required:true,
@@ -40,10 +39,12 @@ const productSchema=  new mongoose.Schema({
     description:{
         type:String,
         required:true
+    },
+    userId:{
+        type:String,
+        required:true
     }
-
-
 })
 
-const products=mongoose.model("products",productSchema)
-module.exports=products
+const wishlists= mongoose.model("wishlists",wishListSchema)
+module.exports  = wishlists

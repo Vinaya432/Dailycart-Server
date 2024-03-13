@@ -12,4 +12,23 @@ exports.getAllProductController= async (req,res)=>{
         res.status(401).json(error)
         
     }
+
+
+
+}
+
+//get a single product
+exports.getAProductController= async (req,res)=>{
+    const {id}=req.params
+
+    try {
+
+        const result = await products.findOne({id})
+        // console.log(result);
+        res.status(200).json(result)
+        
+    } catch (error) {
+        res.status(401).json(error)
+        
+    }
 }
